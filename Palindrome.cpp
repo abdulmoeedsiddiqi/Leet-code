@@ -3,7 +3,7 @@ using namespace std;
 class Solution{
     public:
     bool isPalindrome(int x){
-        if(x < 0 || (x!=0 && x % 10 == 0) ){
+        if((x < 0 ) || (x!=0 && x % 10 == 0) ){
             return false ;
         }
         int returnedNumber = 0;
@@ -11,7 +11,7 @@ class Solution{
             returnedNumber = 10 * returnedNumber + x % 10;
             x=x/10;
         }
-        return returnedNumber == x || returnedNumber == x / 10 ; 
+        return x == returnedNumber || x == returnedNumber / 10 ;  
     }
 };
 int main()
@@ -21,11 +21,11 @@ int main()
     cout << "Enter a number: ";
     cin >> n;
     if(solution.isPalindrome(n)){
-        cout<< << "Entered number is Palindrome.";
+        cout<< n << " is Palindrome.";
     }
     else{
-        cout << "Entered number is not a Palindrome. ";
-    }
+        cout<< n << " is not a Palindrome.";        
+        }
     
     return 0;
 }
